@@ -3,6 +3,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  // base: '/7click/',
+  base: '/7click/',
   plugins: [react()],
 })

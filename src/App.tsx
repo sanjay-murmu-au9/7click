@@ -8,7 +8,7 @@ import ContactPage from './pages/ContactPage'
 
 function App() {
   return (
-    <Router>
+    <Router basename='/7click/'>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
