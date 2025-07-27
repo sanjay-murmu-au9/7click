@@ -19,19 +19,19 @@ export default function BlurImage({ src, alt, className = '' }: BlurImageProps) 
   }, [src]);
 
   return (
-    <div className="relative overflow-hidden w-full h-full">
+    <div className="relative overflow-hidden w-full h-full group">
       {/* Blurred small image placeholder */}
       {isLoading && smallImageUrl && (
         <img
           src={smallImageUrl}
           alt={alt}
-          className={`${className} absolute inset-0 w-full h-full object-cover blur-xl scale-105 transform`}
+          className={`${className} absolute inset-0 w-full h-full object-contain md:object-cover blur-xl scale-105 transform`}
         />
       )}
 
       {/* Loading shimmer effect */}
       {isLoading && (
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer" 
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer"
              style={{ backgroundSize: '200% 100%' }}
         />
       )}
@@ -40,7 +40,7 @@ export default function BlurImage({ src, alt, className = '' }: BlurImageProps) 
       <img
         src={src}
         alt={alt}
-        className={`${className} ${
+        className={`${className} w-full h-full object-contain md:object-cover ${
           isLoading ? 'opacity-0' : 'opacity-100'
         } transition-opacity duration-500 ease-in-out`}
         onLoad={() => setIsLoading(false)}

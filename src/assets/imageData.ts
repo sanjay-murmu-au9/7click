@@ -54,9 +54,9 @@ export const images: ImageData[] = [
     category: 'Portrait',
     date: '2025-07-12'
   },
-  {
-    url: 'https://images.unsplash.com/photo-1485628390555-1a7bd503f9fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-    alt: 'Abstract architectural patterns in black and white',
+{
+    url: 'https://images.unsplash.com/photo-1616578738046-8d6bbb4ee28e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
+    alt: 'Modern architectural building with geometric patterns',
     category: 'Architecture',
     date: '2025-05-30'
   },
