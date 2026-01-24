@@ -71,7 +71,7 @@ export default function ContactPage() {
                     </div>
                     <div className="ml-4">
                       <h3 className="text-lg font-medium text-gray-900">Studio Location</h3>
-                      <p className="mt-1 text-gray-600">SNA Studio, Banderjori, Dumka – 814101, Jharkhand, India</p>
+                      <p className="mt-1 text-gray-600">SNA Brothers, Bandarjori, Dumka – 814101, Jharkhand, India</p>
                     </div>
                   </div>
                 </div>
