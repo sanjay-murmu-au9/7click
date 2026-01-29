@@ -21,25 +21,9 @@ export default function ContactPage() {
           <div className="relative">
             <div className="bg-white rounded-2xl shadow-xl p-8 sticky top-24">
               <h2 className="text-2xl font-bold text-gray-900 mb-8">Contact Information</h2>
-              
+
               {/* Contact Cards */}
               <div className="space-y-6">
-                {/* Email Card */}
-                <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 transform transition duration-300 hover:scale-105">
-                  <div className="flex items-center">
-                    <div className="flex-shrink-0">
-                      <div className="bg-indigo-500 rounded-lg p-3">
-                        <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="ml-4">
-                      <h3 className="text-lg font-medium text-gray-900">Email</h3>
-                      <p className="mt-1 text-gray-600">stevensiyush0777@gmail.com</p>
-                    </div>
-                  </div>
-                </div>
 
                 {/* Phone Card */}
                 <div className="bg-gradient-to-r from-purple-50 to-pink-50 rounded-xl p-6 transform transition duration-300 hover:scale-105">
@@ -54,6 +38,23 @@ export default function ContactPage() {
                     <div className="ml-4">
                       <h3 className="text-lg font-medium text-gray-900">Phone</h3>
                       <p className="mt-1 text-gray-600">+91-9771340085</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Email Card */}
+                <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-xl p-6 transform transition duration-300 hover:scale-105">
+                  <div className="flex items-center">
+                    <div className="flex-shrink-0">
+                      <div className="bg-indigo-500 rounded-lg p-3">
+                        <svg className="h-6 w-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="ml-4 flex flex-col">
+                      <h3 className="text-lg font-medium text-gray-900">Email</h3>
+                      <p className="mt-1 text-gray-600 break-all">stevensiyush0777@gmail.com</p>
                     </div>
                   </div>
                 </div>
@@ -98,8 +99,8 @@ export default function ContactPage() {
                     {/* Shareable Contact Link */}
                     <div className="flex flex-col items-center">
                       <h4 className="text-sm font-semibold text-gray-600 mb-2">Share My Contact</h4>
-                      <a 
-                        href="http://localhost:5174/contact" 
+                      <a
+                        href="http://localhost:5174/contact"
                         className="px-4 py-2 bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-lg hover:from-indigo-600 hover:to-purple-600 transition-all duration-300 flex items-center space-x-2"
                       >
                         <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
