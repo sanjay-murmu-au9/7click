@@ -85,8 +85,8 @@ export default function Gallery() {
             1100: 2,
             700: 1
           }}
-          className="flex -ml-4 w-auto"
-          columnClassName="pl-4 bg-clip-padding"
+          className="flex ml-0 sm:-ml-4 w-auto"
+          columnClassName="pl-0 sm:pl-4 bg-clip-padding"
         >
           {images.map((image, index) => (
             <div
@@ -97,11 +97,11 @@ export default function Gallery() {
                   ? 'opacity-100 translate-y-0'
                   : 'opacity-0 translate-y-8'
               }`}
-              style={{ 
+              style={{
                 transitionDelay: `${(index % 3) * 100}ms`,
               }}
             >
-              <div 
+              <div
                 className="relative group cursor-pointer rounded-lg overflow-hidden"
                 onDoubleClick={() => {
                   setSelectedImage(image)
@@ -113,24 +113,24 @@ export default function Gallery() {
                   alt={image.alt}
                   className="w-full h-auto rounded-lg transform transition-transform duration-300 group-hover:scale-[1.02]"
                 />
-                <div 
-                  className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent 
-                             opacity-0 group-hover:opacity-100 transition-all duration-300 
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent
+                             opacity-0 group-hover:opacity-100 transition-all duration-300
                              flex items-end"
                 >
                   <div className="p-6 text-white">
-                    <span className="inline-block px-3 py-1 text-xs font-medium bg-white/20 
-                                   backdrop-blur-sm rounded-md mb-2 transform group-hover:translate-y-0 
+                    <span className="inline-block px-3 py-1 text-xs font-medium bg-white/20
+                                   backdrop-blur-sm rounded-md mb-2 transform group-hover:translate-y-0
                                    translate-y-4 transition-transform duration-300 delay-100"
                     >
                       {image.category}
                     </span>
-                    <h3 className="text-lg font-medium leading-tight transform group-hover:translate-y-0 
+                    <h3 className="text-lg font-medium leading-tight transform group-hover:translate-y-0
                                  translate-y-4 transition-transform duration-300 delay-150"
                     >
                       {image.alt}
                     </h3>
-                    <p className="text-sm text-gray-300 mt-1 transform group-hover:translate-y-0 
+                    <p className="text-sm text-gray-300 mt-1 transform group-hover:translate-y-0
                                  translate-y-4 transition-transform duration-300 delay-200"
                     >
                       {new Date(image.date).toLocaleDateString('en-US', {
