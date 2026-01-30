@@ -29,7 +29,7 @@ export default function AboutPage() {
           <div className="mt-8 lg:mt-0">
             <img
               className="rounded-lg shadow-lg w-full h-[600px] object-cover"
-              src="https://images.unsplash.com/photo-1493863641943-9b68992a8d07"
+              src="https://tinyurl.com/sevensclickAboutMe"
               alt="Professional photographer with camera in studio"
             />
           </div>
