@@ -185,7 +185,7 @@ export default function Footer() {
                   </svg>
                 </div>
                 <address className="not-italic">
-                  SNA Studio, Banderjori,<br />
+                  SNA Brothers, Bandarjori,<br />
                   Dumka – 814101,<br />
                   Jharkhand, India
                 </address>
