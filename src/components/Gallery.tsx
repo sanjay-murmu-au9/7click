@@ -12,16 +12,31 @@ function useWindowWidth() {
   return width;
 }
 import Masonry from 'react-masonry-css'
-import { images } from '../assets/imageData'
+import { images as originalImages } from '../assets/imageData'
 import { type ImageData } from '../assets/imageData'
 import BlurImage from './BlurImage'
 import ImageModal from './ImageModal'
+
+import { useMemo } from 'react'
+
+// Fisher-Yates shuffle
+function shuffleArray<T>(array: T[]): T[] {
+  const arr = array.slice();
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
+}
 
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<ImageData | null>(null)
   const [currentImageIndex, setCurrentImageIndex] = useState<number>(-1)
   const [visibleImages, setVisibleImages] = useState<number[]>([])
   const observerRef = useRef<IntersectionObserver | null>(null)
+
+  // Memoize shuffled images so it only shuffles on mount
+  const images = useMemo(() => shuffleArray(originalImages), [])
 
   const handlePrevImage = () => {
     if (currentImageIndex > 0) {
