@@ -40,7 +40,7 @@ export default function AboutPage() {
         <div className="flex-1 flex flex-col items-center gap-6">
           <BlurImage
             className="rounded-2xl shadow-lg w-full max-w-xs h-64 object-cover"
-            src="https://tinyurl.com/sevensclickAboutMe"
+            src="https://tinyurl.com/sevensclickAboutMe1"
             alt="Photographer at work"
           />
           <div className="bg-gradient-to-r from-blue-100 to-purple-100 rounded-xl p-6 w-full max-w-xs text-center">
