@@ -31,10 +31,10 @@ export const images: ImageData[] = [
     date: '2025-05-20'
   },
   {
-    url: 'https://images.unsplash.com/photo-1534575180408-b7d7c0136ee8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-    alt: 'Wildlife shot of a lion in golden light',
-    category: 'Wildlife',
-    date: '2025-07-10'
+    url: 'https://tinyurl.com/sevensclickPortrait1',
+    alt: 'studio Portrait shoot',
+    category: 'Portrait',
+    date: '2026-01-30'
   },
   {
     url: 'https://images.unsplash.com/photo-1516912481808-3406841bd33c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2344&q=80',
