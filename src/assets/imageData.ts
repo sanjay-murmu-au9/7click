@@ -32,7 +32,7 @@ export const images: ImageData[] = [
   },
   {
     url: 'https://tinyurl.com/sevensclickPortrait1',
-    alt: 'studio Portrait shoot',
+    alt: 'Studio Portrait shoot',
     category: 'Portrait',
     date: '2026-01-30'
   },
