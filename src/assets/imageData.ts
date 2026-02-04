@@ -13,10 +13,10 @@ export const images: ImageData[] = [
     date: '2026-01-30'
   },
   {
-    url: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2340&q=80',
-    alt: 'Yosemite Valley with dramatic clouds',
+    url: 'https://tinyurl.com/sevensclick003',
+    alt: 'Traditional wedding ending ceremony',
     category: 'Landscape',
-    date: '2025-06-15',
+    date: '2026-02-04',
   },
   {
     url: 'https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80',
@@ -25,10 +25,10 @@ export const images: ImageData[] = [
     date: '2025-07-01'
   },
   {
-    url: 'https://images.unsplash.com/photo-1511818966892-d7d671e672a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2342&q=80',
-    alt: 'Modern architectural lines in black and white',
+    url: 'https://tinyurl.com/sevensclick04',
+    alt: 'Traditional ritual during wedding ceremony',
     category: 'Architecture',
-    date: '2025-05-20'
+    date: '2026-02-05'
   },
   {
     url: 'https://tinyurl.com/sevensclickPortrait1',
