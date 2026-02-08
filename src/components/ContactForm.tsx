@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
+import { sendLead } from '../assets/sendLead'
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -12,16 +13,27 @@ export default function ContactForm() {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [showSuccess, setShowSuccess] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000))
-    console.log('Form submitted:', formData)
-    setIsSubmitting(false)
-    setShowSuccess(true)
-    setTimeout(() => setShowSuccess(false), 3000)
+    setError(null)
+    try {
+      await sendLead({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        message: formData.message,
+      })
+      setShowSuccess(true)
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+      setTimeout(() => setShowSuccess(false), 3000)
+    } catch (err: any) {
+      setError(err.message || 'Something went wrong')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -34,6 +46,14 @@ export default function ContactForm() {
             <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
           </svg>
           Message sent successfully!
+        </div>
+      )}
+      {error && (
+        <div className="absolute top-4 left-4 bg-red-100 border border-red-400 text-red-700 px-4 py-2 rounded-lg flex items-center animate-fade-in">
+          <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M18 10A8 8 0 11.001 10 8 8 0 0118 10zm-8-4a1 1 0 00-1 1v2a1 1 0 002 0V7a1 1 0 00-1-1zm0 8a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
+          </svg>
+          {error}
         </div>
       )}
 
@@ -98,24 +118,7 @@ export default function ContactForm() {
             </label>
           </div>
 
-          <div className="relative">
-            <input
-              type="text"
-              name="subject"
-              id="subject"
-              value={formData.subject}
-              onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-              className="peer w-full border-0 border-b-2 border-gray-300 px-0 py-2 placeholder:text-transparent focus:border-indigo-500 focus:outline-none focus:ring-0"
-              placeholder="Subject"
-              required
-            />
-            <label
-              htmlFor="subject"
-              className="absolute left-0 -top-3.5 text-sm text-gray-600 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-indigo-600"
-            >
-              Subject
-            </label>
-          </div>
+          {/* Subject field removed for API compatibility */}
         </div>
 
         <div className="relative">
