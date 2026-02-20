@@ -54,7 +54,7 @@ export default function ContactPage() {
                     </div>
                     <div className="ml-4 flex flex-col">
                       <h3 className="text-lg font-medium text-gray-900">Email</h3>
-                      <p className="mt-1 text-gray-600 break-all">stevensiyush0777@gmail.com</p>
+                      <p className="mt-1 text-gray-600 break-all">sevensclick@gmail.com</p>
                     </div>
                   </div>
                 </div>
