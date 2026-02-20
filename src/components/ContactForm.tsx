@@ -19,6 +19,13 @@ export default function ContactForm() {
     e.preventDefault()
     setIsSubmitting(true)
     setError(null)
+
+    if (!/^[6-9]\d{9}$/.test(formData.phone)) {
+      setError('Please enter a valid 10-digit Indian phone number')
+      setIsSubmitting(false)
+      return
+    }
+
     try {
       await sendLead({
         name: formData.name,
@@ -28,7 +35,7 @@ export default function ContactForm() {
       })
       setShowSuccess(true)
       setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
-      setTimeout(() => setShowSuccess(false), 3000)
+      setTimeout(() => setShowSuccess(false), 5000)
     } catch (err: any) {
       setError(err.message || 'Something went wrong')
     } finally {
@@ -37,7 +44,22 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="bg-white rounded-2xl shadow-xl p-8 relative overflow-hidden">
+    <>
+      {showSuccess && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 animate-fade-in">
+          <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md mx-4 text-center">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg className="w-8 h-8 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+            </div>
+            <h3 className="text-2xl font-bold text-gray-900 mb-2">Thank You!</h3>
+            <p className="text-gray-600">Your message has been sent successfully. We'll get back to you soon!</p>
+          </div>
+        </div>
+      )}
+
+      <div className="bg-white rounded-2xl shadow-xl p-8 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500"></div>
       
       {showSuccess && (
@@ -109,12 +131,15 @@ export default function ContactForm() {
               onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
               className="peer w-full border-0 border-b-2 border-gray-300 px-0 py-2 placeholder:text-transparent focus:border-indigo-500 focus:outline-none focus:ring-0"
               placeholder="Phone"
+              pattern="[6-9]\d{9}"
+              maxLength={10}
+              required
             />
             <label
               htmlFor="phone"
               className="absolute left-0 -top-3.5 text-sm text-gray-600 transition-all peer-placeholder-shown:top-2 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-3.5 peer-focus:text-sm peer-focus:text-indigo-600"
             >
-              Phone (optional)
+              Phone
             </label>
           </div>
 
@@ -163,5 +188,6 @@ export default function ContactForm() {
         </div>
       </form>
     </div>
+    </>
   )
 }
