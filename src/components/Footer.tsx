@@ -156,7 +156,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4 text-gray-200">Get In Touch</h3>
             <div className="space-y-4">
               <a
-                href="mailto:stevensiyush0777@gmail.com"
+                href="mailto:sevensclick@gmail.com"
                 className="flex items-center text-gray-400 hover:text-white transition-all duration-300 group"
               >
                 <div className="mr-3 p-2 bg-gray-800 rounded-lg group-hover:bg-indigo-600 transform group-hover:scale-110 transition-all duration-300">
@@ -164,7 +164,7 @@ export default function Footer() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
-                stevensiyush0777@gmail.com
+                sevensclick@gmail.com
               </a>
               <a
                 href="tel:+919771340085"
